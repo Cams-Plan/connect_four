@@ -1,4 +1,4 @@
-            MAKING CONNECT 4
+MAKING CONNECT 4
 
 two players for this game 
 
