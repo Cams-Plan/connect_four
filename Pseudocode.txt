@@ -1,0 +1,48 @@
+            MAKING CONNECT 4
+
+two players for this game 
+
+welcome players to the game and start while loop
+collect player 1's name             //just to improve user experienc
+    display player's name 
+collect player 2's name
+    display player 2's name
+
+if they are the same add two to the end of the 2nd player's string
+
+random selection of who starts
+display starting player
+movesMade =  0
+
+while movesMade doesn't = 42
+    if player double clicks on column
+        place counter on lowest point
+        (if counter at bottom, 
+            move up column until space is free,
+            then add in empty position)
+        add to total movesMade
+
+    if 4 consecutive spaces match on 3 planes
+        display the winner
+        break then ask to play again
+    else  
+    
+    switch over to other player 
+    if player double clicks on column
+        place counter on lowest point
+        (if counter at bottom, 
+            move up column until space is free,
+            then add in empty row)
+        add to movesMade 
+    if 4 consecutive spaces match on 3 planes
+        display the winner
+        break then ask to play again 
+    
+    repeat til winner
+
+
+    at the end of game
+        display with the total moves
+        display result
+        ask if they want to play again
+        replay or exit
