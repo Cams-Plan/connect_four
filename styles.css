@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+
+    font-family: 'Lato', sans-serif;
+    overflow: hidden;
+}
+
+header {
+    height: 40px;
+    width: 100%;
+    background-color: rgb(255, 230, 230);
+    display: flex;
+    justify-content: center;
+}
+
+header > h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    align-self: center;
+}
+
+main {
+    height: calc(100% - 40px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main > section {
+    background-color: rgb(255, 230, 230);
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+}
+
+#display-info {
+    margin: 10px 0 10px 0;
+}
+
+#display-timer {
+    margin: 10px 0 50px 0;
+}
+
+#connect-4-table {
+    width: 560px;
+    height: 480px;
+    background-color: rgb(194 186 159);
+    align-self: center;
+}
+
+td {
+    background-color: rgb(255, 255, 255);
+    clip-path: ellipse(25px 25px);
+}
+
+#turn-button {
+    width: 160px;
+    height: 40px;
+    margin: 20px 0;
+}
