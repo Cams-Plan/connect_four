@@ -1,9 +1,13 @@
 const timer = document.querySelector('#display-timer');
 const turnButton = document.querySelector('#turn-button')
+const spaces = document.querySelector('.circle')
 
-// how will we trigger the start of the game on the html? from the timer? or new button?
+
+function changePlayer () {
+    placeholder = ""
+}
 
 
-const changePlayer = (player) => {
+function startGame () {
 
 }
