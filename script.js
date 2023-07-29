@@ -33,6 +33,7 @@ class Player {
 let playerList = [];
 let roundCount = 0;
 let playerTurn = 0;
+let isCalculating;
 
 let gridArray = [[0, 0, 0, 0, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0, 0],
@@ -71,7 +72,7 @@ function checkWin() {
         for (let j = 0; j < gridArray[i].length; j++) {
             if (gridArray[i][j] != 0) {
                 // Horizontal
-                if (j < gridArray[j].length - 4) {
+                if (j < gridArray[i].length - 4) {
                     if (gridArray[i][j] == 1 &&
                         gridArray[i][j+1] == 1 &&
                         gridArray[i][j+2] == 1 &&
@@ -103,7 +104,7 @@ function checkWin() {
                 }
 
                 // Diagonal - Left to Right
-                if (i >= gridArray.length - 4 && j <= gridArray[i].length - 4) {
+                if (i > gridArray.length - 4 && j <= gridArray[i].length - 4) {
                     if (gridArray[i][j] == 1 &&
                         gridArray[i-1][j+1] == 1 &&
                         gridArray[i-2][j+2] == 1 &&
@@ -298,51 +299,55 @@ function roundHandler() {
 function addPiece(e) {
     e.preventDefault();
 
-    switch(currentState) {
-        case gameState.playing:
-            let pieceID = e.target.id;
-            let splitString = pieceID.split("-");
-            // console.log(splitString[1]);
-            // console.log(splitString[2]);
-
-            let foundIndex = checkValidPlay(splitString[1]-1, splitString[2]-1);
-            if (foundIndex != null) {
-                gridArray[foundIndex['row']][foundIndex['col']] = playerTurn + 1;
-                let pieceTarget = document.querySelector(`#item-${foundIndex['row']+1}-${foundIndex['col']+1}`);
-                
-                switch (playerTurn) {
-                    case 0:
-                        pieceTarget.classList.add('p1-circle');
-                    break;
-                    case 1:
-                        pieceTarget.classList.add('p2-circle');
-                    break;
+    if (!isCalculating) {
+        switch(currentState) {
+            case gameState.playing:
+                isCalculating = true;
+                let pieceID = e.target.id;
+                let splitString = pieceID.split("-");
+                // console.log(splitString[1]);
+                // console.log(splitString[2]);
+    
+                let foundIndex = checkValidPlay(splitString[1]-1, splitString[2]-1);
+                if (foundIndex != null) {
+                    gridArray[foundIndex['row']][foundIndex['col']] = playerTurn + 1;
+                    let pieceTarget = document.querySelector(`#item-${foundIndex['row']+1}-${foundIndex['col']+1}`);
+                    
+                    switch (playerTurn) {
+                        case 0:
+                            pieceTarget.classList.add('p1-circle');
+                        break;
+                        case 1:
+                            pieceTarget.classList.add('p2-circle');
+                        break;
+                    }
+                    
+                    switchTurns();
+                }
+    
+                // console.log(gridArray);
+    
+                checkWin();
+    
+                if (currentState == gameState.playing) {
+                    if (checkFull()) {
+                        roundEnd(2);
+                    }
                 }
                 
-                switchTurns();
-            }
-
-            // console.log(gridArray);
-
-            checkWin();
-
-            if (currentState == gameState.playing) {
-                if (checkFull()) {
-                    roundEnd(2);
-                }
-            }
-            
-        break;
-        case gameState.idle:
-            alert('Please Start the Game');
-        break;
+                isCalculating = false;
+            break;
+            case gameState.idle:
+                alert('Please Start the Game');
+            break;
+        }
     }
-
     
 }
 
 function startGame(e) {
     e.preventDefault();
+    isCalculating = false;
 
     roundHandler();
 }
