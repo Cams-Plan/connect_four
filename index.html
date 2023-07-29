@@ -12,10 +12,22 @@
         <h1>Connect Four</h1>
     </header>
     <main>
-        
+        <section id="sidebar-left">
+          <form id="player-form">
+            <label id="player1-label" for="player1-input">Player 1</label>
+            <label id="player1-score" class="score-label hide">0</label>
+            <input id="player1-input" class="player-input" type="text" name="player1" placeholder="e.g. Orange"></input>
+            <br>
+            <label id="player2-label" for="player2-input">Player 2</label>
+            <label id="player2-score" class="score-label hide">0</label>
+            <input id="player2-input" class="player-input" type="text" name="player2" placeholder="e.g. Banana"></input>
+            <br>
+            <button id="player-submit" type="submit" value="submit">Submit</button>
+          </form>
+        </section>
         <section>
-            <h2 id="display-info">Enter Title</h2>
-            <h2 id="display-timer">Timer</h2>
+            <h2 id="display-info">Add Players on The Left</h2>
+            <h2 id="display-timer"> </h2>
 
             <table id="connect-4-table">
                 <tr>
@@ -25,6 +37,7 @@
                   <td id="item-1-4" class="circle"></td>
                   <td id="item-1-5" class="circle"></td>
                   <td id="item-1-6" class="circle"></td>
+                  <td id="item-1-7" class="circle"></td>
                 </tr>
                 <tr>
                     <td id="item-2-1" class="circle"></td>
@@ -33,6 +46,7 @@
                     <td id="item-2-4" class="circle"></td>
                     <td id="item-2-5" class="circle"></td>
                     <td id="item-2-6" class="circle"></td>
+                    <td id="item-2-7" class="circle"></td>
                 </tr>
                 <tr>
                     <td id="item-3-1" class="circle"></td>
@@ -41,22 +55,25 @@
                   <td id="item-3-4" class="circle"></td>
                   <td id="item-3-5" class="circle"></td>
                   <td id="item-3-6" class="circle"></td>
+                  <td id="item-3-7" class="circle"></td>
                 </tr>
                 <tr>
-                    <td id="item-4-1" class="circle"></td>
-                  <td id="item-4-2" class="circle"></td>
-                  <td id="item-4-3" class="circle"></td>
-                  <td id="item-4-4" class="circle"></td>
-                  <td id="item-4-5" class="circle"></td>
-                  <td id="item-4-6" class="circle"></td>
+                  <td id="item-4-1"  class="circle"></td>
+                  <td id="item-4-2"  class="circle"></td>
+                  <td id="item-4-3"  class="circle"></td>
+                  <td id="item-4-4"  class="circle"></td>
+                  <td id="item-4-5"  class="circle"></td>
+                  <td id="item-4-6"  class="circle"></td>
+                  <td id="item-4-7"  class="circle"></td>
                 </tr>
                 <tr>
-                    <td id="item-5-1" class="circle"></td>
+                  <td id="item-5-1" class="circle"></td>
                   <td id="item-5-2" class="circle"></td>
                   <td id="item-5-3" class="circle"></td>
                   <td id="item-5-4" class="circle"></td>
                   <td id="item-5-5" class="circle"></td>
                   <td id="item-5-6" class="circle"></td>
+                  <td id="item-5-7" class="circle"></td>
                 </tr>
                 <tr>
                     <td id="item-6-1" class="circle"></td>
@@ -65,17 +82,12 @@
                   <td id="item-6-4" class="circle"></td>
                   <td id="item-6-5" class="circle"></td>
                   <td id="item-6-6" class="circle"></td>
-                </tr>
-                <tr>
-                    <td id="item-7-1" class="circle"></td>
-                    <td id="item-7-2" class="circle"></td>
-                    <td id="item-7-3" class="circle"></td>
-                    <td id="item-7-4" class="circle"></td>
-                    <td id="item-7-5" class="circle"></td>
-                    <td id="item-7-6" class="circle"></td>
+                  <td id="item-6-7" class="circle"></td>
                 </tr>
               </table>
-              <button id="turn-button">Next</button>
+              <div id="start-wrapper">
+                <button id="start-button">Start</button>
+              </div>
         </section>
     </main>
 </body>
