@@ -72,7 +72,7 @@ function checkWin() {
         for (let j = 0; j < gridArray[i].length; j++) {
             if (gridArray[i][j] != 0) {
                 // Horizontal
-                if (j < gridArray[i].length - 4) {
+                if (j <= gridArray[i].length - 4) {
                     if (gridArray[i][j] == 1 &&
                         gridArray[i][j+1] == 1 &&
                         gridArray[i][j+2] == 1 &&
